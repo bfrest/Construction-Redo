@@ -1,10 +1,11 @@
 import React from "react";
+import "./app.scss";
 import Login from "./components/Auth/Login";
 
 const App = () => {
   return (
     // todo: get routing done
-    <div>
+    <div className="appWrap">
       <Login />
     </div>
   );

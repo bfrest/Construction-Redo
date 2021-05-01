@@ -1,4 +1,5 @@
 import React from "react";
+import "./Login.scss";
 
 const Login = () => {
   return (
@@ -7,8 +8,9 @@ const Login = () => {
     // todo: connect to db
     // todo: to db realated log in
 
-    <div>
+    <div className="formWrap">
       <form>
+        <h2>Foxridge Login</h2>
         <input type="email" placeholder="email" />
         <input type="password" placeholder="password" />
         <button>Login</button>
