@@ -33779,32 +33779,12 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"components/Machines/MachineHome.jsx":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var AllMachines = function AllMachines() {
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "allMachines"
-  }, /*#__PURE__*/_react.default.createElement("h2", null, "machines here"));
-};
-
-var _default = AllMachines;
-exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"components/Nav/navstyles.scss":[function(require,module,exports) {
+},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"components/machineHomeStyles.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Nav/Nav.jsx":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/MachineHome.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33814,13 +33794,64 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _reactRouterDom = require("react-router-dom");
-
-require("./navstyles.scss");
+require("./machineHomeStyles.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var NavBar = function NavBar() {
+var AllMachines = function AllMachines() {
+  var arrToMap = [{
+    id: "2",
+    type: "truck",
+    model: "320d",
+    img: "https://images.pexels.com/photos/1420744/pexels-photo-1420744.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+  }, {
+    id: "3",
+    type: "skid",
+    model: "299d",
+    img: "https://media.istockphoto.com/photos/skid-loader-or-bobcat-construction-equipment-picture-id946212692?s=612x612"
+  }, {
+    id: "24",
+    type: "dozer",
+    model: "d6",
+    img: "https://images.pexels.com/photos/1009926/pexels-photo-1009926.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+  }];
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "allMachines"
+  }, arrToMap.map(function (item) {
+    return /*#__PURE__*/_react.default.createElement("div", {
+      className: "machine-card"
+    }, /*#__PURE__*/_react.default.createElement("h1", null, item.model), /*#__PURE__*/_react.default.createElement("img", {
+      src: item.img
+    }), /*#__PURE__*/_react.default.createElement("div", {
+      className: "innerCard"
+    }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, "Next Service"), /*#__PURE__*/_react.default.createElement("p", null, "500hrs")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, "Last Inspection"), /*#__PURE__*/_react.default.createElement("p", null, "6 Days ago"))));
+  }));
+};
+
+var _default = AllMachines;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./machineHomeStyles.scss":"components/machineHomeStyles.scss"}],"components/navStyles.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Nav.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./navStyles.scss");
+
+var _reactRouterDom = require("react-router-dom");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Nav = function Nav() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "navWrap"
   }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
@@ -33835,9 +33866,9 @@ var NavBar = function NavBar() {
   }, "GPS")));
 };
 
-var _default = NavBar;
+var _default = Nav;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./navstyles.scss":"components/Nav/navstyles.scss"}],"components/GPS/GpsHome.jsx":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./navStyles.scss":"components/navStyles.scss","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"components/GpsHome.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33845,19 +33876,21 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var GpsHome = function GpsHome() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "gpsHome"
-  }, /*#__PURE__*/_react.default.createElement("p", null, "gps is sick"));
+  }, /*#__PURE__*/_react.default.createElement("p", null, "YAY GPS"));
 };
 
 var _default = GpsHome;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"components/Calculators/Calcs.jsx":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"components/Calcs.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33893,13 +33926,13 @@ var _Login = _interopRequireDefault(require("./components/Auth/Login"));
 
 var _reactRouterDom = require("react-router-dom");
 
-var _MachineHome = _interopRequireDefault(require("./components/Machines/MachineHome"));
+var _MachineHome = _interopRequireDefault(require("./components/MachineHome"));
 
-var _Nav = _interopRequireDefault(require("./components/Nav/Nav"));
+var _Nav = _interopRequireDefault(require("./components/Nav"));
 
-var _GpsHome = _interopRequireDefault(require("./components/GPS/GpsHome"));
+var _GpsHome = _interopRequireDefault(require("./components/GpsHome"));
 
-var _Calcs = _interopRequireDefault(require("./components/Calculators/Calcs"));
+var _Calcs = _interopRequireDefault(require("./components/Calcs"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33921,7 +33954,7 @@ var App = function App() {
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./app.scss":"app.scss","./components/Auth/Login":"components/Auth/Login.jsx","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/Machines/MachineHome":"components/Machines/MachineHome.jsx","./components/Nav/Nav":"components/Nav/Nav.jsx","./components/GPS/GpsHome":"components/GPS/GpsHome.jsx","./components/Calculators/Calcs":"components/Calculators/Calcs.jsx"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./app.scss":"app.scss","./components/Auth/Login":"components/Auth/Login.jsx","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/MachineHome":"components/MachineHome.jsx","./components/Nav":"components/Nav.jsx","./components/GpsHome":"components/GpsHome.jsx","./components/Calcs":"components/Calcs.jsx"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -33963,7 +33996,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61768" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64593" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

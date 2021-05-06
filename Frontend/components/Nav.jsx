@@ -1,8 +1,8 @@
 import React from "react";
+import "./navStyles.scss";
 import { Link } from "react-router-dom";
-import "./navstyles.scss";
 
-const NavBar = () => {
+const Nav = () => {
   return (
     <div className="navWrap">
       <li>
@@ -26,4 +26,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Nav;

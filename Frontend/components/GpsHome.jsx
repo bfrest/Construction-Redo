@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 const GpsHome = () => {
   return (
     <div className="gpsHome">
-      <p>gps is sick</p>
+      <p>YAY GPS</p>
     </div>
   );
 };

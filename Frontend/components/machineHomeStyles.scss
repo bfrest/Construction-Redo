@@ -1,0 +1,33 @@
+.allMachines {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .machine-card {
+    border: 2px solid gray;
+    width: 90%;
+    margin: 2rem;
+    border-radius: 0.5rem;
+    img {
+      height: 200px;
+    }
+
+    .innerCard {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+
+      div {
+        text-align: center;
+        width: 50%;
+        font-size: 1.2rem;
+        border: 2px solid gray;
+        padding: 5px;
+      }
+
+      h3 {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}
