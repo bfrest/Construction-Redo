@@ -7,8 +7,7 @@ const AllMachines = () => {
       id: "2",
       type: "truck",
       model: "320d",
-      img:
-        "https://images.pexels.com/photos/1420744/pexels-photo-1420744.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      img: "https://res.cloudinary.com/bfrest/image/upload/v1532729559/foxridge/IMG_1333.jpg",
     },
     {
       id: "3",
@@ -29,18 +28,10 @@ const AllMachines = () => {
     <div className="allMachines">
       {arrToMap.map((item) => {
         return (
-          <div className="machine-card">
-            <h1>{item.model}</h1>
-            <img src={item.img} />
-            <div className="innerCard">
-              <div>
-                <h3>Next Service</h3>
-                <p>500hrs</p>
-              </div>
-              <div>
-                <h3>Last Inspection</h3>
-                <p>6 Days ago</p>
-              </div>
+          <div className="machine-card" key={item.id}>
+            <div className="bottomBtns">
+              <button className="serviceBtn">Service</button>
+              <button className="inspectionBtn">Inspection</button>
             </div>
           </div>
         );

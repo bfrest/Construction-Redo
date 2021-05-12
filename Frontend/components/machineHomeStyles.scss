@@ -2,32 +2,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
 
-  .machine-card {
-    border: 2px solid gray;
-    width: 90%;
-    margin: 2rem;
-    border-radius: 0.5rem;
-    img {
-      height: 200px;
-    }
+.machine-card {
+  color: white;
+  min-width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-image: url(https://res.cloudinary.com/bfrest/image/upload/v1532729559/foxridge/IMG_1333.jpg);
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  min-height: 10rem;
+  max-width: 20rem;
 
-    .innerCard {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      justify-items: center;
-
-      div {
-        text-align: center;
-        width: 50%;
-        font-size: 1.2rem;
-        border: 2px solid gray;
-        padding: 5px;
-      }
-
-      h3 {
-        margin-bottom: 3rem;
-      }
-    }
+  button {
+    border: none;
+    background-color: none;
+    padding: 16px;
+    width: 50%;
+    margin-top: 8rem;
+    color: white;
+    font-size: 1.2rem;
   }
+}
+
+.serviceBtn {
+  background-color: #eac43d;
+}
+
+.inspectionBtn {
+  background-color: #2a5c99;
 }

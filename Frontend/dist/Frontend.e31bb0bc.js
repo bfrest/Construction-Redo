@@ -33803,7 +33803,7 @@ var AllMachines = function AllMachines() {
     id: "2",
     type: "truck",
     model: "320d",
-    img: "https://images.pexels.com/photos/1420744/pexels-photo-1420744.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+    img: "https://res.cloudinary.com/bfrest/image/upload/v1532729559/foxridge/IMG_1333.jpg"
   }, {
     id: "3",
     type: "skid",
@@ -33819,12 +33819,15 @@ var AllMachines = function AllMachines() {
     className: "allMachines"
   }, arrToMap.map(function (item) {
     return /*#__PURE__*/_react.default.createElement("div", {
-      className: "machine-card"
-    }, /*#__PURE__*/_react.default.createElement("h1", null, item.model), /*#__PURE__*/_react.default.createElement("img", {
-      src: item.img
-    }), /*#__PURE__*/_react.default.createElement("div", {
-      className: "innerCard"
-    }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, "Next Service"), /*#__PURE__*/_react.default.createElement("p", null, "500hrs")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, "Last Inspection"), /*#__PURE__*/_react.default.createElement("p", null, "6 Days ago"))));
+      className: "machine-card",
+      key: item.id
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      className: "bottomBtns"
+    }, /*#__PURE__*/_react.default.createElement("button", {
+      className: "serviceBtn"
+    }, "Service"), /*#__PURE__*/_react.default.createElement("button", {
+      className: "inspectionBtn"
+    }, "Inspection")));
   }));
 };
 
@@ -33996,7 +33999,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64593" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50587" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
