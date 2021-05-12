@@ -199,6 +199,12 @@ table {
   background-color: #2a5c99;
   border-bottom-right-radius: 5px; }
 
+.imgOverlay {
+  background-color: rgba(154, 160, 185, 0.9);
+  height: 100px;
+  width: 100px;
+  z-index: 10; }
+
 .navWrap {
   display: flex;
   justify-content: space-evenly;
