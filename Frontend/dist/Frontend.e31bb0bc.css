@@ -179,9 +179,10 @@ table {
   background-position-x: center;
   background-position-y: center;
   background-origin: padding-box;
-  max-height: 25rem; }
+  max-height: 20rem;
+  border-radius: 5px; }
   .machine-card .bottomBtns {
-    margin-top: 94%; }
+    margin-top: 71%; }
     .machine-card .bottomBtns button {
       border: none;
       background-color: none;
@@ -191,10 +192,12 @@ table {
       font-size: 1.2rem; }
 
 .serviceBtn {
-  background-color: #eac43d; }
+  background-color: #eac43d;
+  border-bottom-left-radius: 5px; }
 
 .inspectionBtn {
-  background-color: #2a5c99; }
+  background-color: #2a5c99;
+  border-bottom-right-radius: 5px; }
 
 .navWrap {
   display: flex;
