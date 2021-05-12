@@ -166,26 +166,29 @@ table {
 
 .machine-card {
   color: white;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.5), 0 15px 40px rgba(166, 173, 201, 0.5);
   min-width: 90%;
   display: flex;
   flex-direction: column;
   margin: 2rem;
-  border-radius: 0.5rem;
+  padding: 0;
   overflow: hidden;
   background-image: url(https://res.cloudinary.com/bfrest/image/upload/v1532729559/foxridge/IMG_1333.jpg);
-  background-size: cover;
+  background-size: conatin;
+  background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;
-  min-height: 10rem;
-  max-width: 20rem; }
-  .machine-card button {
-    border: none;
-    background-color: none;
-    padding: 16px;
-    width: 50%;
-    margin-top: 8.5rem;
-    color: white;
-    font-size: 1.2rem; }
+  background-origin: padding-box;
+  max-height: 25rem; }
+  .machine-card .bottomBtns {
+    margin-top: 94%; }
+    .machine-card .bottomBtns button {
+      border: none;
+      background-color: none;
+      padding: 27px;
+      width: 50%;
+      color: white;
+      font-size: 1.2rem; }
 
 .serviceBtn {
   background-color: #eac43d; }
