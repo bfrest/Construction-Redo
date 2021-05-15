@@ -6,6 +6,7 @@ import MachineHome from "./components/MachineHome";
 import Nav from "./components/Nav";
 import GpsHome from "./components/GpsHome";
 import Calcs from "./components/Calcs";
+import ViewMachine from "./components/ViewMachine";
 
 const App = () => {
   return (
@@ -19,6 +20,10 @@ const App = () => {
       {/* <Login /> */}
 
       <Switch>
+        <Route path="/machine/:id">
+          <ViewMachine />
+        </Route>
+
         <Route path="/gps">
           <GpsHome />
         </Route>
