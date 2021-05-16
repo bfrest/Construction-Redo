@@ -14,6 +14,10 @@ const AllMachines = () => {
             style={{
               backgroundImage: `url(${item.image})`,
             }}>
+            {/*  this should be wrapped around the image somehow....maybe different way of laying out the card*/}
+            <button>
+              <Link to={{ pathname: `/machine/${item.id}` }}>Machines</Link>
+            </button>
             <div className="bottomBtns">
               <button className="serviceBtn">Service</button>
               <button className="inspectionBtn">Inspection</button>

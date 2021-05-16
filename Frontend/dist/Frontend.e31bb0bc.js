@@ -33842,7 +33842,11 @@ var AllMachines = function AllMachines() {
       style: {
         backgroundImage: "url(".concat(item.image, ")")
       }
-    }, /*#__PURE__*/_react.default.createElement("div", {
+    }, /*#__PURE__*/_react.default.createElement("button", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: {
+        pathname: "/machine/".concat(item.id)
+      }
+    }, "Machines")), /*#__PURE__*/_react.default.createElement("div", {
       className: "bottomBtns"
     }, /*#__PURE__*/_react.default.createElement("button", {
       className: "serviceBtn"
@@ -33934,7 +33938,12 @@ var Calcs = function Calcs() {
 
 var _default = Calcs;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"components/ViewMachine.jsx":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"components/viewMachine.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ViewMachine.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33944,15 +33953,34 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _reactRouterDom = require("react-router-dom");
+
+var _testData = _interopRequireDefault(require("../testData"));
+
+require("./viewMachine.scss");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ViewMachine = function ViewMachine(props) {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, "Here should be info about this machine"), console.log());
+  var _useParams = (0, _reactRouterDom.useParams)(),
+      id = _useParams.id;
+
+  var currentMachine = _testData.default[id - 1];
+  console.log(currentMachine); // Fetch the specific machine
+  // dispalay data and graphs
+  // last service, last inspection, filters, oil type
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "machineBreakdown"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: currentMachine.image,
+    height: "200px"
+  }), /*#__PURE__*/_react.default.createElement("h2", null, currentMachine.model), /*#__PURE__*/_react.default.createElement("p", null, "hours: ", currentMachine.hours));
 };
 
 var _default = ViewMachine;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"app.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../testData":"testData.js","./viewMachine.scss":"components/viewMachine.scss"}],"app.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34042,7 +34070,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50367" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53386" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
