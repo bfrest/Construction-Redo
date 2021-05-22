@@ -238,12 +238,28 @@ table {
   background-color: white;
   padding: 10px;
   max-width: 80vw; }
+  .serviceInputs input[type="checkbox"] {
+    display: none; }
+  .serviceInputs input + label {
+    border: 2px solid rgba(2, 2, 2, 0.62);
+    padding: 8px 20px 8px 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: black;
+    font-size: 1rem; }
+  .serviceInputs input:checked + label {
+    box-shadow: 0px 4px 15px 0px rgba(34, 34, 34, 0.41);
+    border: 2px solid lightgreen;
+    background: green;
+    color: #fff; }
   .serviceInputs button {
     color: white;
     border: none;
     padding: 5px;
     font-size: 1rem;
-    background-color: #eac43d; }
+    background-color: #eac43d;
+    margin-top: 15px; }
 
 .navWrap {
   display: flex;

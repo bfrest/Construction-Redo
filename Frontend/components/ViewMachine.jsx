@@ -7,7 +7,6 @@ const ViewMachine = (props) => {
   const { id } = useParams();
 
   const currentMachine = machines[id - 1];
-  console.log(currentMachine);
   // Fetch the specific machine
 
   // dispalay data and graphs

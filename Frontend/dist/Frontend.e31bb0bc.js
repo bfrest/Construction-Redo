@@ -33827,30 +33827,62 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 require("./newService.scss");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var NewService = function NewService() {
+  var _useState = (0, _react.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      filters = _useState2[0],
+      setFilters = _useState2[1];
+
+  var checkIfChecked = function checkIfChecked(e, func) {
+    func(e.target.checked);
+    console.log(e.target);
+  };
+
+  console.log(filters);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "serviceModal"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "serviceInputs"
   }, /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("input", {
-    type: "text",
-    placeholder: "filters"
-  }), /*#__PURE__*/_react.default.createElement("input", {
-    type: "text",
-    placeholder: "filters"
-  }), /*#__PURE__*/_react.default.createElement("input", {
-    type: "text",
-    placeholder: "filters"
-  }), /*#__PURE__*/_react.default.createElement("input", {
-    type: "text",
-    placeholder: "filters"
-  }), /*#__PURE__*/_react.default.createElement("button", null, "Add Service"))));
+    type: "checkbox",
+    name: "filters",
+    id: "filters",
+    onClick: function onClick(e) {
+      return checkIfChecked(e, setFilters);
+    }
+  }), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "filters"
+  }, "Filters"), /*#__PURE__*/_react.default.createElement("input", {
+    name: "oil",
+    type: "checkbox"
+  }), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "oil"
+  }, "oil"), /*#__PURE__*/_react.default.createElement("input", {
+    name: "air",
+    type: "checkbox"
+  }), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "air"
+  }, "Filters"), /*#__PURE__*/_react.default.createElement("button", null, "Add Service"))));
 };
 
 var _default = NewService;
@@ -34033,8 +34065,7 @@ var ViewMachine = function ViewMachine(props) {
   var _useParams = (0, _reactRouterDom.useParams)(),
       id = _useParams.id;
 
-  var currentMachine = _testData.default[id - 1];
-  console.log(currentMachine); // Fetch the specific machine
+  var currentMachine = _testData.default[id - 1]; // Fetch the specific machine
   // dispalay data and graphs
   // last service, last inspection, filters, oil type
 
@@ -34138,7 +34169,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52259" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53491" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
