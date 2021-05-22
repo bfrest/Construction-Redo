@@ -179,7 +179,7 @@ table {
   background-position-x: center;
   background-position-y: center;
   background-origin: padding-box;
-  max-height: 20rem;
+  max-height: 22rem;
   border-radius: 5px; }
   .machine-card .bottomBtns {
     margin-top: 71%; }
@@ -199,11 +199,51 @@ table {
   background-color: #2a5c99;
   border-bottom-right-radius: 5px; }
 
+.serviceBtn,
+.inspectionBtn {
+  z-index: 10; }
+
+.moreInfo {
+  align-self: flex-end;
+  margin: 0.5rem 0.5rem 0 0; }
+  .moreInfo button {
+    background-color: none;
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    padding: 5px; }
+
 .imgOverlay {
   background-color: rgba(154, 160, 185, 0.9);
   height: 100px;
   width: 100px;
   z-index: 10; }
+
+.serviceModal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(128, 128, 128, 0.6);
+  z-index: 20;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.serviceInputs {
+  background-color: white;
+  padding: 10px;
+  max-width: 80vw; }
+  .serviceInputs button {
+    color: white;
+    border: none;
+    padding: 5px;
+    font-size: 1rem;
+    background-color: #eac43d; }
 
 .navWrap {
   display: flex;
@@ -220,6 +260,12 @@ table {
     list-style-type: none;
     color: black;
     transition: all 0.1s linear; }
+
+.machineBreakdown {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
 
 /*# sourceMappingURL=/Frontend.e31bb0bc.css.map */

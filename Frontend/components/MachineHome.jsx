@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./machineHomeStyles.scss";
 import machines from "../testData";
 import { Link } from "react-router-dom";
+import NewService from "./NewService";
 
 const AllMachines = () => {
+  const [serviceModal, setServiceModal] = useState(false);
   return (
     <div className="allMachines">
       {machines.map((item) => {
@@ -14,14 +16,18 @@ const AllMachines = () => {
             style={{
               backgroundImage: `url(${item.image})`,
             }}>
-            {/*  this should be wrapped around the image somehow....maybe different way of laying out the card*/}
-            <button>
-              <Link to={{ pathname: `/machine/${item.id}` }}>Machines</Link>
-            </button>
+            <Link className="moreInfo" to={{ pathname: `/machine/${item.id}` }}>
+              <button>i</button>
+            </Link>
             <div className="bottomBtns">
-              <button className="serviceBtn">Service</button>
+              <button className="serviceBtn" onClick={() => setServiceModal(!serviceModal)}>
+                Service
+              </button>
+
               <button className="inspectionBtn">Inspection</button>
             </div>
+
+            {serviceModal && <NewService />}
           </div>
         );
       })}

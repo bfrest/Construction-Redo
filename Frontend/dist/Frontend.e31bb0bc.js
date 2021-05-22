@@ -33814,7 +33814,12 @@ var machines = [{
 }];
 var _default = machines;
 exports.default = _default;
-},{}],"components/MachineHome.jsx":[function(require,module,exports) {
+},{}],"components/newService.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/NewService.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33824,15 +33829,74 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+require("./newService.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var NewService = function NewService() {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "serviceModal"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "serviceInputs"
+  }, /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    placeholder: "filters"
+  }), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    placeholder: "filters"
+  }), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    placeholder: "filters"
+  }), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    placeholder: "filters"
+  }), /*#__PURE__*/_react.default.createElement("button", null, "Add Service"))));
+};
+
+var _default = NewService;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./newService.scss":"components/newService.scss"}],"components/MachineHome.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
 require("./machineHomeStyles.scss");
 
 var _testData = _interopRequireDefault(require("../testData"));
 
 var _reactRouterDom = require("react-router-dom");
 
+var _NewService = _interopRequireDefault(require("./NewService"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 var AllMachines = function AllMachines() {
+  var _useState = (0, _react.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      serviceModal = _useState2[0],
+      setServiceModal = _useState2[1];
+
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "allMachines"
   }, _testData.default.map(function (item) {
@@ -33842,23 +33906,27 @@ var AllMachines = function AllMachines() {
       style: {
         backgroundImage: "url(".concat(item.image, ")")
       }
-    }, /*#__PURE__*/_react.default.createElement("button", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      className: "moreInfo",
       to: {
         pathname: "/machine/".concat(item.id)
       }
-    }, "Machines")), /*#__PURE__*/_react.default.createElement("div", {
+    }, /*#__PURE__*/_react.default.createElement("button", null, "i")), /*#__PURE__*/_react.default.createElement("div", {
       className: "bottomBtns"
     }, /*#__PURE__*/_react.default.createElement("button", {
-      className: "serviceBtn"
+      className: "serviceBtn",
+      onClick: function onClick() {
+        return setServiceModal(!serviceModal);
+      }
     }, "Service"), /*#__PURE__*/_react.default.createElement("button", {
       className: "inspectionBtn"
-    }, "Inspection")));
+    }, "Inspection")), serviceModal && /*#__PURE__*/_react.default.createElement(_NewService.default, null));
   }));
 };
 
 var _default = AllMachines;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./machineHomeStyles.scss":"components/machineHomeStyles.scss","../testData":"testData.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"components/navStyles.scss":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./machineHomeStyles.scss":"components/machineHomeStyles.scss","../testData":"testData.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./NewService":"components/NewService.jsx"}],"components/navStyles.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -34070,7 +34138,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53386" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52259" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

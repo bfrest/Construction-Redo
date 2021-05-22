@@ -19,7 +19,7 @@
   background-position-x: center;
   background-position-y: center;
   background-origin: padding-box;
-  max-height: 20rem;
+  max-height: 22rem;
   border-radius: 5px;
 
   .bottomBtns {
@@ -44,6 +44,25 @@
 .inspectionBtn {
   background-color: #2a5c99;
   border-bottom-right-radius: 5px;
+}
+
+.serviceBtn,
+.inspectionBtn {
+  z-index: 10;
+}
+
+.moreInfo {
+  align-self: flex-end;
+  margin: 0.5rem 0.5rem 0 0;
+
+  button {
+    background-color: none;
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    padding: 5px;
+  }
 }
 
 .imgOverlay {
