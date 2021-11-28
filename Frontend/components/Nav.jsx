@@ -10,18 +10,6 @@ const Nav = () => {
           Home
         </Link>
       </li>
-
-      <li>
-        <Link className="linkItem" to="/calcs">
-          Calcs
-        </Link>
-      </li>
-
-      <li>
-        <Link className="linkItem" to="/gps">
-          GPS
-        </Link>
-      </li>
     </div>
   );
 };
