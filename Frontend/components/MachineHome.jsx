@@ -6,23 +6,23 @@ const AllMachines = () => {
     {
       id: "2",
       type: "truck",
-      model: "320d",
-      img:
-        "https://images.pexels.com/photos/1420744/pexels-photo-1420744.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      model: "Truck 1",
+      img: "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.marketingstrategiesandsolutions.com%2Fwp-content%2Fuploads%2F2014%2F01%2FStone-Slinger-Truck.jpeg.jpg&f=1&nofb=1",
+      hours: 2240,
     },
     {
       id: "3",
-      type: "skid",
-      model: "299d",
-      img:
-        "https://media.istockphoto.com/photos/skid-loader-or-bobcat-construction-equipment-picture-id946212692?s=612x612",
+      type: "truck",
+      model: "Truck 2",
+      img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.c7Pkso-cktmnnpvS4UO5GgAAAA%26pid%3DApi&f=1",
+      hours: 610,
     },
     {
       id: "24",
-      type: "dozer",
-      model: "d6",
-      img:
-        "https://images.pexels.com/photos/1009926/pexels-photo-1009926.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      type: "truck",
+      model: "Truck 3",
+      img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.GCi9jWy2qPTcnP-u22C0xQHaFj%26pid%3DApi&f=1",
+      hours: 220,
     },
   ];
   return (
@@ -35,8 +35,9 @@ const AllMachines = () => {
             <div className="innerCard">
               <div>
                 <h3>Next Service</h3>
-                <p>500hrs</p>
+                <p>{item.hours}</p>
               </div>
+
               <div>
                 <h3>Last Inspection</h3>
                 <p>6 Days ago</p>

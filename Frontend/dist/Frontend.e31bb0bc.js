@@ -33802,18 +33802,21 @@ var AllMachines = function AllMachines() {
   var arrToMap = [{
     id: "2",
     type: "truck",
-    model: "320d",
-    img: "https://images.pexels.com/photos/1420744/pexels-photo-1420744.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+    model: "Truck 1",
+    img: "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.marketingstrategiesandsolutions.com%2Fwp-content%2Fuploads%2F2014%2F01%2FStone-Slinger-Truck.jpeg.jpg&f=1&nofb=1",
+    hours: 2240
   }, {
     id: "3",
-    type: "skid",
-    model: "299d",
-    img: "https://media.istockphoto.com/photos/skid-loader-or-bobcat-construction-equipment-picture-id946212692?s=612x612"
+    type: "truck",
+    model: "Truck 2",
+    img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.c7Pkso-cktmnnpvS4UO5GgAAAA%26pid%3DApi&f=1",
+    hours: 610
   }, {
     id: "24",
-    type: "dozer",
-    model: "d6",
-    img: "https://images.pexels.com/photos/1009926/pexels-photo-1009926.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+    type: "truck",
+    model: "Truck 3",
+    img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.GCi9jWy2qPTcnP-u22C0xQHaFj%26pid%3DApi&f=1",
+    hours: 220
   }];
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "allMachines"
@@ -33824,7 +33827,7 @@ var AllMachines = function AllMachines() {
       src: item.img
     }), /*#__PURE__*/_react.default.createElement("div", {
       className: "innerCard"
-    }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, "Next Service"), /*#__PURE__*/_react.default.createElement("p", null, "500hrs")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, "Last Inspection"), /*#__PURE__*/_react.default.createElement("p", null, "6 Days ago"))));
+    }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, "Next Service"), /*#__PURE__*/_react.default.createElement("p", null, item.hours)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, "Last Inspection"), /*#__PURE__*/_react.default.createElement("p", null, "6 Days ago"))));
   }));
 };
 
@@ -33857,7 +33860,10 @@ var Nav = function Nav() {
   }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     className: "linkItem",
     to: "/"
-  }, "Home")));
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: "https://savageconveying.com/images/logo.svg",
+    height: "70"
+  }))));
 };
 
 var _default = Nav;
@@ -33990,7 +33996,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49541" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49628" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -7,7 +7,7 @@ const Nav = () => {
     <div className="navWrap">
       <li>
         <Link className="linkItem" to="/">
-          Home
+          <img src="https://savageconveying.com/images/logo.svg" height="70" />
         </Link>
       </li>
     </div>
